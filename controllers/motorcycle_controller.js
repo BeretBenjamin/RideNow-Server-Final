@@ -13,7 +13,7 @@ const getAllMotorcycles = async (req, res) => {
 
 const getMotorcycles = async (req, res) => {
     try {
-        const userId = req.query.userId; // Get it from query parameter
+        const userId = req.query.userId; 
         if (!userId) {
             return res.status(400).json({ message: 'Missing userId' });
         }
@@ -47,7 +47,7 @@ const addMotorcycle = async (req, res) => {
         const imagePath = req.file ? req.file.path : null;
 
         const newMotorcycle = new Motorcycle({
-            MotorcycleId: uuidv4(), //  Auto-generated
+            MotorcycleId: uuidv4(), 
             MotorcycleBrand,
             MotorcycleModel,
             MotorcycleYear,
@@ -55,8 +55,8 @@ const addMotorcycle = async (req, res) => {
             UserId,
             ImagePath: imagePath
         });
-        console.log("BODY:", req.body);
-        console.log("FILE:", req.file);
+        //console.log("BODY:", req.body);
+        //console.log("FILE:", req.file);
 
         await newMotorcycle.save();
         res.status(201).json(newMotorcycle);

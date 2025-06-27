@@ -19,14 +19,14 @@ const {
     getAllMotorcycles
 } = require('../controllers/motorcycle_controller');
 
-const upload = require('../utils/upload'); // <-- Add this line
+const upload = require('../utils/upload'); 
 
 const router = express.Router();
 
 // Routes
 router.get('/all',getAllMotorcycles);
 router.get('/', getMotorcycles);
-router.post('/', upload.single('image'), addMotorcycle); // <-- Modified to handle image upload
+router.post('/', upload.single('image'), addMotorcycle); 
 router.put('/:id', updateMotorcycle);
 router.delete('/:id', deleteMotorcycle);
 

@@ -7,14 +7,14 @@ const {
     deleteRoute
 } = require('../controllers/route_controller');
 
-const uploadRoute = require('../utils/upload_route'); // Handles GPS file upload
+const uploadRoute = require('../utils/upload_route'); 
 
 const router = express.Router();
 
 // Routes
 router.get('/all', getAllRoutes);
-router.get('/', getRoutesByUser); // with query param ?userId=...
-router.post('/', uploadRoute.single('gpsFile'), addRoute); // Accepts 'gpsFile' in multipart/form-data
+router.get('/', getRoutesByUser); 
+router.post('/', uploadRoute.single('gpsFile'), addRoute); 
 router.put('/:id', updateRoute);
 router.delete('/:id', deleteRoute);
 

@@ -6,8 +6,8 @@ const MotorcycleSchema = new mongoose.Schema({
     MotorcycleModel: { type: String, required: true },
     MotorcycleYear: { type: Number, required: true },
     MotorcyclePower: { type: Number, required: true },
-    UserId: { type: String, required: true }, // Link to the user's UserId
-    ImagePath: { type: String } // Stores the image file path
+    UserId: { type: String, required: true }, 
+    ImagePath: { type: String } 
 });
 
 module.exports = mongoose.model('Motorcycle', MotorcycleSchema);

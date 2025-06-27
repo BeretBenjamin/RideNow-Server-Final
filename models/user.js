@@ -6,10 +6,10 @@ const UserSchema = new mongoose.Schema({
     UserId: { type: String,default: uuidv4, required: true },
     UserEmail: { type: String, required: true },
     UserName: { type: String, required: true },
-    UserPassword: { type: String, required: true }, // Hash passwords in production
+    UserPassword: { type: String, required: true }, // Hash 
 });
 
-// Hash password before saving a user
+// Hash 
 UserSchema.pre('save', async function (next) {
     if (!this.isModified('UserPassword')) return next();
     const salt = await bcrypt.genSalt(10);

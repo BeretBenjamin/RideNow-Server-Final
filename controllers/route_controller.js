@@ -75,7 +75,6 @@ const addRoute = async (req, res) => {
     }
 };
 
-// PUT update route (without modifying file)
 const updateRoute = async (req, res) => {
     try {
         const updatedRoute = await Route.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -85,7 +84,6 @@ const updateRoute = async (req, res) => {
     }
 };
 
-// DELETE route (and delete file)
 const deleteRoute = async (req, res) => {
     try {
         const route = await Route.findByIdAndDelete(req.params.id);

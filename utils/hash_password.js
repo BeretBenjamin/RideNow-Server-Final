@@ -1,9 +1,9 @@
 const bcrypt = require('bcrypt');
 
-// Function to hash a password
+//  to hash
 const hashPassword = async (password) => {
     try {
-        const saltRounds = 10; // Adjust salt rounds as needed (10 is a standard value)
+        const saltRounds = 10; // salt rounds (10 is a standard value)
         const hashedPassword = await bcrypt.hash(password, saltRounds);
         return hashedPassword;
     } catch (error) {
@@ -11,7 +11,6 @@ const hashPassword = async (password) => {
     }
 };
 
-// Function to compare a password with its hash
 const comparePassword = async (password, hashedPassword) => {
     try {
         const isMatch = await bcrypt.compare(password, hashedPassword);

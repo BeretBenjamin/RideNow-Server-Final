@@ -100,8 +100,6 @@ const loginUser = async (req, res) => {
         if (!user.UserPassword) {
             return res.status(500).json({ message: "User's password is missing from the database" });
         }
-
-        // Debug: Check if stored password and entered password are correct
         //console.log("Entered password:", password);
         //console.log("Stored hashed password:", user.UserPassword);
 
