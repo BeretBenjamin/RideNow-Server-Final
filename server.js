@@ -37,7 +37,8 @@ app.get('/', (req, res) => {
 
 app.get('/api/files/:filename', (req, res) => {
   //console.log('Requested filename:', req.params.filename);
-  const filePath = path.posix.join(__dirname, '', req.params.filename);
+  const filePath = path.join(__dirname, '', req.params.filename);
+  console.log("filePath");
   res.sendFile(filePath);
 });
 
